@@ -13,14 +13,15 @@ public class CircularlyLinkedList {
         this.currentNode = currentNode;
     }
 
-    public void addNode () {
-
+    public void addNode (LinkedListNode newNode) {
+        newNode.setNextNode(getCurrentNode().nextNode());
+        getCurrentNode().setNextNode(newNode);
     }
-    public void removeNode () {
-
+    public void removeNextNode () {
+        getCurrentNode().setNextNode(getCurrentNode().nextNode().nextNode());
     }
     public void moveToNextNode () {
-
+        currentNode = currentNode.nextNode();
     }
     public LinkedListNode getCurrentNode () {
         return currentNode;
