@@ -1,7 +1,5 @@
 package question2;
 
-import java.util.ArrayList;
-
 public class CircularlyLinkedList {
 
     private LinkedListNode headNode;
@@ -10,7 +8,7 @@ public class CircularlyLinkedList {
     public CircularlyLinkedList (LinkedListNode headNode) {
         this.headNode = headNode;
         this.headNode.setNextNode(this.headNode);
-        this.currentNode = currentNode;
+        this.currentNode = this.headNode;
     }
 
     public void addNode (LinkedListNode newNode) {
