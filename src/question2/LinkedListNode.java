@@ -5,6 +5,11 @@ public class LinkedListNode {
     private LinkedListNode next;
     private Object value;
 
+    public LinkedListNode (int value, LinkedListNode nextNode) {
+        setValue(value);
+        setNextNode(nextNode);
+    }
+
     public LinkedListNode nextNode () {
         return next;
     }
