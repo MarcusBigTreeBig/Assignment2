@@ -1,6 +1,6 @@
 package question2;
 
-public class CircularlyLinkedList {
+public class CircularlyLinkedList{
 
     private LinkedListNode headNode;
     private LinkedListNode currentNode;
@@ -21,6 +21,7 @@ public class CircularlyLinkedList {
     public void moveToNextNode () {
         currentNode = currentNode.nextNode();
     }
+    public void currentToHead () {currentNode = headNode;}
     public LinkedListNode getCurrentNode () {
         return currentNode;
     }

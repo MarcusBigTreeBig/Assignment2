@@ -16,13 +16,15 @@ public class Main {
      */
     public static int josephus (int n, int k) {
          CircularlyLinkedList circle = new CircularlyLinkedList(new LinkedListNode(n, null));
-         //adding the last person first, so that teh first time removeNextNode() is called, it kills the first person
+         //adding the last person first, so that the first time removeNextNode() is called, it kills the first person
          for (int i = 1; i <= n-1; i++) {
              circle.addNode(new LinkedListNode(i, null));
+             circle.moveToNextNode();
          }
+         circle.currentToHead();
          circle.removeNextNode();//killing the first person
          for (int i = 0; i < n-2; i++) {
-             for (int j = 0; j < k-1; j++) {//stops one before the person to kill
+             for (int j = 0; j < k; j++) {//stops one before the person to kill
                  circle.moveToNextNode();
              }
              circle.removeNextNode();
