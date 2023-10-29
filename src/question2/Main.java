@@ -1,6 +1,12 @@
 package question2;
 
 public class Main {
+
+    /**
+     * sets up test cases and tests if the linked list and recursive algorithms for the Josephus problem output the same answers
+     *
+     * @param args
+     */
     public static void main (String[] args) {
         int[] nTestValues = {1, 14, 450, 20, 20, 5, 7};
         int[] kTestValues = {1, 1, 20, 450, 0, 3, 3};
@@ -47,14 +53,24 @@ public class Main {
         }
     }
 
+    /**
+     * Takes an array of test values to compare the linked list algorithm for the Josephus problem to a recursive algorithm
+     * Prints both inputs, each result, and if they are equal for each case
+     * If the amount of test values for the 2 inputs are the same, nothing will happen
+     *
+     * @param nTestValues array of test values for the amount of people in the circle
+     * @param kTestValues array of test values for the amount of people skipped at a time
+     */
     public static void runTests (int[] nTestValues, int[] kTestValues) {
-        int n, k, linkedList, recursive;
-        for (int i = 0; i < nTestValues.length; i++) {
-            n = nTestValues[i];
-            k = kTestValues[i];
-            linkedList = josephus(n, k);
-            recursive = josephusTest(n, k);
-            System.out.println("n: " + n + "; k: " + k + "; LinkedList: " + linkedList + "; Recursive: " + recursive + "; Test: " + (linkedList == recursive));
+        if (nTestValues.length == kTestValues.length) {
+            int n, k, linkedList, recursive;
+            for (int i = 0; i < nTestValues.length; i++) {
+                n = nTestValues[i];
+                k = kTestValues[i];
+                linkedList = josephus(n, k);
+                recursive = josephusTest(n, k);
+                System.out.println("n: " + n + "; k: " + k + "; LinkedList: " + linkedList + "; Recursive: " + recursive + "; Test: " + (linkedList == recursive));
+            }
         }
     }
 
