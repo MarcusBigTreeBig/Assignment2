@@ -78,6 +78,8 @@ public class Main {
 }
 
 /*
+Output:
+
 n: 1; k: 1; LinkedList: 1; Recursive: 1; Test: true
 n: 14; k: 1; LinkedList: 12; Recursive: 12; Test: true
 n: 450; k: 20; LinkedList: 426; Recursive: 426; Test: true
