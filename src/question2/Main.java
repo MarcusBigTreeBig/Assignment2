@@ -40,6 +40,7 @@ public class Main {
 
     /**
      * Algorithm to solve the Josephus problem using a recursive formula
+     * used to verify the linked list approach
      *
      * @param n amount of people in the circle
      * @param k how many people are skipped before another is killed
