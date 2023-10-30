@@ -58,24 +58,24 @@ public class CuckooHashMap {
         Element originalElement = element;
         Element nextElement;
         boolean complete = false;
-        if (elementAtKey(key) != null) {
+        if (elementAtKey(key) != null) {//so that it will be overridden if reusing a key
             removeElementAtKey(key);
         }
         do {
             do {
-                if (table[hashFunction(element.key, false)] == null) {
+                if (table[hashFunction(element.key, false)] == null) {//first function
                     table[hashFunction(element.key, false)] = element;
                     complete = true;
-                } else if (table[hashFunction(element.key, true)] == null) {
+                } else if (table[hashFunction(element.key, true)] == null) {//second function
                     table[hashFunction(element.key, true)] = element;
                     complete = true;
-                } else {
+                } else {//trying the next element
                     nextElement = table[hashFunction(key, false)];
                     table[hashFunction(element.key, false)] = element;
                     element = nextElement;
                 }
-            } while (!complete && element != originalElement);
-            if (!complete) {
+            } while (!complete && element != originalElement);//infinite loop if comes back to the starting element
+            if (!complete) {//refactoring the table if the element can't be placed in either of it's hash functions
                 refactor();
             }
         } while (!complete);
